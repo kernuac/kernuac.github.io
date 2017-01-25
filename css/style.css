@@ -1,0 +1,61 @@
+* {
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+body, html {
+    font-family: 'Fira Sans', sans-serif;
+    color: #5a5a5a;
+}
+
+/** general **/
+body > * {
+    margin: 5px;
+}
+a {
+    text-decoration: none;
+    color: #5a5a5a;
+}
+ul {
+    list-style: none;
+}
+
+/** site-header **/
+body > header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+body > header > h1 {
+
+}
+
+body > header > p {
+    font-weight: lighter;
+}
+
+/** navbar **/
+body > nav > ul > li > a {
+    display: block;
+    line-height: 20px;
+    padding: 10px;
+}
+
+/** pages **/
+body > main {
+    position: relative;
+}
+
+body > main > section.page {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 0;   
+}
+
+body > main > section.page.active {
+    left: 0;
+    opacity: 1;
+}
