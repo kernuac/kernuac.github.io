@@ -59,3 +59,11 @@ body > main > section.page.active {
     left: 0;
     opacity: 1;
 }
+
+@media screen and (min-width: 720px) {
+    
+}
+
+@media screen and (min-width: 960px) {
+    
+}
