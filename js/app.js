@@ -1,4 +1,4 @@
-(function () {
+/*(function () {
     document.getElementById('Home').classList.add('active');
     document.querySelector("body > nav > ul").addEventListener('click', function (e) {
         var elements = [].slice.call(document.querySelectorAll('body > main > section'));
@@ -12,3 +12,15 @@
         
     });
 })();
+*/
+
+var App = (function (Router) {
+    var api = {};
+    api.init = function () {
+        Router.init();
+    };
+    
+    return api;
+})(Router);
+
+document.addEventListener('DOMContentLoaded', App.init);

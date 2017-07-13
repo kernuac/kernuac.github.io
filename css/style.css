@@ -22,6 +22,10 @@ ul {
     list-style: none;
 }
 
+p {
+    margin-top: 10px;
+}
+
 /** site-header **/
 body > header {
     margin: 0 auto;
@@ -45,19 +49,33 @@ body > nav > ul > li > a {
 
 /** pages **/
 body > main {
+    display: block;
     position: relative;
+    height: auto;
 }
 
 body > main > section.page {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    opacity: 0;   
+    opacity: 0;
+    height: 0;
+    display: none;
 }
 
 body > main > section.page.active {
-    left: 0;
+    display:block;
+    transition-delay: 1s;
     opacity: 1;
+    height: auto;
+    width: 100%;
+}
+
+.page h2, .page h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+body > footer {
+    border-top: 1px solid gray;
+    padding: 20px;
 }
 
 @media screen and (min-width: 720px) {
