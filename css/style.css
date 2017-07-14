@@ -12,7 +12,6 @@ body, html {
 
 /** general **/
 body > * {
-    margin: 5px;
 }
 a {
     text-decoration: none;
@@ -41,6 +40,20 @@ body > header > p {
 }
 
 /** navbar **/
+body > nav {
+   position: absolute;
+   background: gainsboro;
+   z-index: 23;
+   top: 0;
+   height: 99vh;
+   box-shadow: 3px 0px 5px gray;
+   left: -300px;
+}
+
+body > nav > h2 {
+    margin-left: 10px;
+    padding-top : 10px;
+}
 body > nav > ul > li > a {
     display: block;
     line-height: 20px;
@@ -76,9 +89,25 @@ body > main > section.page.active {
 body > footer {
     border-top: 1px solid gray;
     padding: 20px;
+    margin-top: 20px;
 }
 
 @media screen and (min-width: 720px) {
+    body > nav {
+        position: initial;
+        background: transparent;
+        box-shadow: none;
+        height: 2em;
+    }
+    
+    body > nav > h2,
+    body > nav > ul {
+        display: inline-block;
+    }
+    
+    body > nav > ul > li {
+        display: inline-block;
+    }
     
 }
 
