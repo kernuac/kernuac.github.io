@@ -18,6 +18,23 @@ var App = (function (Router) {
     var api = {};
     api.init = function () {
         Router.init();
+        menuBarInit();
+    };
+    var menuBarInit = function () {
+        document.querySelector('body > nav').addEventListener('click',
+        function (ev) {
+            var target = ev.target;
+            switch(true) {
+                case target.classList.contains('tg-menu-button'):
+                    document.querySelector('body > nav').classList.add('active');
+                    break;
+                case target.nodeType === 'A':
+                    break;
+                default:
+                    document.querySelector('body > nav').classList.remove('active');
+                   
+           } 
+        });
     };
     
     return api;

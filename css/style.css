@@ -28,6 +28,7 @@ p {
 /** site-header **/
 body > header {
     margin: 0 auto;
+    margin-left: 20px;
     text-align: center;
 }
 
@@ -41,14 +42,26 @@ body > header > p {
 
 /** navbar **/
 body > nav {
-   position: absolute;
-   background: gainsboro;
+   width: 200px;
+   position: fixed;
+   left: -200px;
+   /*background: gainsboro;*/
    z-index: 23;
    top: 0;
-   height: 99vh;
-   box-shadow: 3px 0px 5px gray;
-   left: -300px;
+   height: 100vh;
+   /*box-shadow: 3px 0px 5px gray;*/
 }
+
+body > * {
+    margin: 1.6%;
+}
+body > nav.active {
+    left: 0;
+    margin: 0;
+    background: gainsboro;
+    box-shadow: 3px 0px 10px gray;
+}
+
 
 body > nav > h2 {
     margin-left: 10px;
@@ -59,7 +72,23 @@ body > nav > ul > li > a {
     line-height: 20px;
     padding: 10px;
 }
+.tg-menu-button {
+    position: fixed;
+    line-height: 22px;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    left: 10px;
+    font-size: 20pt;
+    opacity: 1;
+    border: 1px solid gray;
+    padding: 1.6%;
+    border-radius: 6px;
+}
 
+body > nav.active .tg-menu-button {
+   opacity: 0;
+}
 /** pages **/
 body > main {
     display: block;
@@ -93,22 +122,40 @@ body > footer {
 }
 
 @media screen and (min-width: 720px) {
+    body > header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: 0px;
+    }
     body > nav {
+        width: 100%;
         position: initial;
         background: transparent;
         box-shadow: none;
-        height: 2em;
+        height: 3em;
     }
     
     body > nav > h2,
     body > nav > ul {
         display: inline-block;
+        line-height: 20px;
+        padding-left: 1.6%;
     }
     
     body > nav > ul > li {
         display: inline-block;
     }
     
+    body > nav > ul > li > a.active {
+        border-bottom: 2px solid gray;
+    }
+    main {
+        margin-top: 20px;
+        padding-left: 1.6%;
+    }
+    .tg-menu-button {
+        display: none;
+    }
 }
 
 @media screen and (min-width: 960px) {
