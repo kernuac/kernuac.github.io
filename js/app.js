@@ -26,12 +26,12 @@ var App = (function (Router) {
             var target = ev.target;
             switch(true) {
                 case target.classList.contains('tg-menu-button'):
-                    document.querySelector('body > nav').classList.add('active');
+                    document.querySelector('body > nav > ul').classList.add('active');
                     break;
                 case target.nodeType === 'A':
                     break;
                 default:
-                    document.querySelector('body > nav').classList.remove('active');
+                    document.querySelector('body > nav > ul').classList.remove('active');
                    
            } 
         });
