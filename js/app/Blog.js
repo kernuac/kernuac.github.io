@@ -4,7 +4,16 @@
  * and open the template in the editor.
  */
 var Blog = (function () {
+    var api = {
+
+    };
+
+    api.init = function ()
+    {
+        
+    };
     
+    return api;   
 })();
 
 

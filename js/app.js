@@ -1,9 +1,11 @@
 var App = (function (Router, MenuBar, Blog) {
     var api = {};
+
     api.init = function () 
     {
         Router.init();
         MenuBar.init();
+        Blog.init();
     };
     
     return api;
