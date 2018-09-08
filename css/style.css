@@ -2,7 +2,7 @@
     margin : 0;
     padding: 0;
     box-sizing: border-box;
-    transition: all 0.5s ease;
+    /*transition: all 0.5s ease;*/
 }
 
 body, html {
@@ -11,8 +11,14 @@ body, html {
 }
 
 /** general **/
-body > * {
+.site-header,
+.navbar-main,
+.main-content,
+.site-footer {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
 }
+
 a {
     text-decoration: none;
     color: #5a5a5a;
@@ -23,26 +29,28 @@ ul {
 
 p {
     margin-top: 10px;
+    text-align: justify;
 }
 
 /** site-header **/
-body > header {
+.site-header {
     margin: 0 auto;
     margin-left: 20px;
     text-align: center;
     margin-top: 20px;
 }
 
-body > header > h1 {
+.site-header > h1 {
 
 }
 
-body > header > p {
+.site-header p {
     font-weight: lighter;
+    text-align: center;
 }
 
 /** navbar **/
-body > nav > ul{
+.navbar-main > ul{
    width: 200px;
    position: fixed;
    left: -220px;
@@ -56,7 +64,8 @@ body > nav > ul{
 body > * {
     margin: 1.6%;
 }
-body > nav ul.active {
+
+.navbar-main ul.active {
     left: 0;
     margin: 0;
     background: gainsboro;
@@ -64,28 +73,28 @@ body > nav ul.active {
 }
 
 
-body > nav > h2 {
+.navbar-main > h2 {
     margin-left: 10px;
     padding-top : 10px;
 }
 
-body > nav > ul {
+.navbar-main > ul {
     padding-top: 40px;
 }
 
-body > nav > ul > li > a {
+.navbar-main > ul > li > a {
     display: block;
     line-height: 20px;
     padding: 10px;
     border-bottom: 1px solid gray;
 }
 
-body > nav > ul > li:first-child > a {
+.navbar-main > ul > li:first-child > a {
     border-top: 1px solid gray
 }
 
 .tg-menu-button {
-    position: absolute;
+    position: fixed;
     line-height: 22px;
     width: 35px;
     height: 35px;
@@ -99,23 +108,23 @@ body > nav > ul > li:first-child > a {
     padding-top: 7px;
 }
 
-body > nav.active .tg-menu-button {
+.navbar-main.active .tg-menu-button {
    opacity: 0;
 }
 /** pages **/
-body > main {
+.main-content {
     display: block;
     position: relative;
     height: auto;
 }
 
-body > main > section.page {
+.main-content > section.page {
     opacity: 0;
     height: 0;
     display: none;
 }
 
-body > main > section.page.active {
+.main-content > section.page.active {
     display:block;
     transition-delay: 1s;
     opacity: 1;
@@ -128,19 +137,19 @@ body > main > section.page.active {
     margin-bottom: 10px;
 }
 
-body > footer {
+.site-footer {
     border-top: 1px solid gray;
     padding: 20px;
     margin-top: 20px;
 }
 
 @media screen and (min-width: 720px) {
-    body > header {
+    .site-header {
         padding-top: 20px;
         padding-bottom: 20px;
         margin-left: 0px;
     }
-    body > nav {
+    .navbar-main {
         display: block;
         width: 100%;
         position: static;
@@ -149,14 +158,14 @@ body > footer {
         height: 3em;
     }
     
-    body > nav > ul {
+    .navbar-main > ul {
         padding-top: 0;
         display: block;
         position: static;
         width: 100%;
     }
 
-    body > nav > ul > h2 {
+    .navbar-main > ul > h2 {
         display: inline-block;
     }
     /*body > nav > h2,
@@ -167,20 +176,23 @@ body > footer {
     }
     */
 
-    body > nav > ul > li {
+    .navbar-main > ul > li {
         display: inline-block;
     }
    
-    body > nav > ul > li > a {
+    .navbar-main > ul > li > a {
         border: none;
     }
-    body > nav > ul > li > a.active {
+
+    .navbar-main > ul > li > a.active {
         border-bottom: 2px solid gray;
     }
-    main {
+    
+    .main-content {
         margin-top: 20px;
         padding-left: 1.6%;
     }
+    
     .tg-menu-button {
         display: none;
     }

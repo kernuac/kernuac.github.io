@@ -4,32 +4,36 @@
  * and open the template in the editor.
  */
 
-var MenuBar = (function () {
-    var api = {};
+var MenuBar = ( function () 
+{
     
-    api.init = function ()
-    {
-        api.nav = document.querySelector('body > nav');
+    var api = {};
+    var nav = {};
+
+    api.init = function () {
+        nav = document.querySelector( '.navbar-main' ) || false;
         setEvents();
     };
     
-    var setEvents = function ()
-    {
-        if( ! api.nav ) {
+    var setEvents = function () {
+        if( ! nav ) {
             return false;
         }
         
-        api.nav.addEventListener('click', onClickEvent );
+        nav.addEventListener('click', onClickEvent );
     };
     
-    var onClickEvent = function (ev) 
-    {
+    var onClickEvent = function ( ev ) {
         var element = ev.target;
+        var menuList = document.querySelector( '.navbar-main > ul' );
+
         if( element.classList.contains( 'tg-menu-button' ) ) {
-            document.querySelector('body > nav > ul').classList.add('active');
+            menuList.classList.add( 'active' );
         } else {
-            document.querySelector('body > nav > ul').classList.remove('active');
+            menuList.classList.remove( 'active' );
         }
     };
+
     return api;
+
 })();
