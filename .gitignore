@@ -1,2 +1,5 @@
 nbproject/
 server.sh
+**/*.pyo
+**/*.pyc
+**/*.swp
