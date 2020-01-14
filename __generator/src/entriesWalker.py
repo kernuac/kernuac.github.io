@@ -17,11 +17,14 @@ class EntriesWalker:
     def retrieveEntries( self ):
         entries = [];
         absPath = self.getEntriesPath();
+        
         entriesFiles = os.listdir( absPath );
+        
         entries = [ 
             EntryCreator( os.path.join( absPath, entryFile ) ).create() 
             for entryFile in entriesFiles 
         ];
+
         return entries;
       
 def main():

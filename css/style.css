@@ -7,197 +7,72 @@
 
 body, html {
     font-family: 'Fira Sans', sans-serif;
-    color: #5a5a5a;
+    color: lightgray;
 }
 
-/** general **/
+body{
+
+}
+
+.site-header {
+    width: 100vw;
+    height: 100vh;
+    background: #3b464d;
+    text-align:center;
+}
+
+.site-header img {
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.navbar-main {
+    position: sticky;
+    top: 0;
+}
+
+.navbar-main ul {
+    background: gray;
+}
+
+.navbar-main ul li, .navbar-main ul h2 {
+    display: inline-block;
+    color: white;
+}
+
+.navbar-main ul li a {
+    display: block;
+    line-height: 10vh;
+    color: white;
+    padding-left: 10vh;
+}
+/*
 .site-header,
 .navbar-main,
 .main-content,
 .site-footer {
-    padding-left: 15% !important;
-    padding-right: 15% !important;
+    display: flex;
+    border: 1px solid black;
 }
 
-a {
-    text-decoration: none;
-    color: #5a5a5a;
-}
-ul {
-    list-style: none;
-}
-
-p {
-    margin-top: 10px;
-    text-align: justify;
+.navbar-main ul {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+    border: 1px solid red;
 }
 
-/** site-header **/
-.site-header {
-    margin: 0 auto;
-    margin-left: 20px;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.site-header > h1 {
-
-}
-
-.site-header p {
-    font-weight: lighter;
-    text-align: center;
-}
-
-/** navbar **/
-.navbar-main > ul{
-   width: 200px;
-   position: fixed;
-   left: -220px;
-   /*background: gainsboro;*/
-   z-index: 23;
-   top: 0;
-   height: 100vh;
-   /*box-shadow: 3px 0px 5px gray;*/
-}
-
-body > * {
-    margin: 1.6%;
-}
-
-.navbar-main ul.active {
-    left: 0;
-    margin: 0;
-    background: gainsboro;
-    box-shadow: 3px 0px 10px gray;
-}
-
-
-.navbar-main > h2 {
-    margin-left: 10px;
-    padding-top : 10px;
-}
-
-.navbar-main > ul {
-    padding-top: 40px;
-}
-
-.navbar-main > ul > li > a {
-    display: block;
+.navbar-main ul li a {
     line-height: 20px;
-    padding: 10px;
-    border-bottom: 1px solid gray;
-}
-
-.navbar-main > ul > li:first-child > a {
-    border-top: 1px solid gray
-}
-
-.tg-menu-button {
-    position: fixed;
-    line-height: 22px;
-    width: 35px;
-    height: 35px;
-    top: 20px;
-    left: 10px;
-    font-size: 20pt;
-    opacity: 1;
-    border: 1px solid gray;
-    border-radius: 6px;
-    text-align: center;
-    padding-top: 7px;
-}
-
-.navbar-main.active .tg-menu-button {
-   opacity: 0;
-}
-/** pages **/
-.main-content {
+    padding: 0.4em;
     display: block;
-    position: relative;
-    height: auto;
 }
 
-.main-content > section.page {
-    opacity: 0;
-    height: 0;
-    display: none;
+.main-content {
+    flex-direction: column;
 }
 
-.main-content > section.page.active {
-    display:block;
-    transition-delay: 1s;
-    opacity: 1;
-    height: auto;
-    width: 100%;
-}
-
-.page h2, .page h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.site-footer {
-    border-top: 1px solid gray;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-@media screen and (min-width: 720px) {
-    .site-header {
-        padding-top: 20px;
-        padding-bottom: 20px;
-        margin-left: 0px;
-    }
-    .navbar-main {
-        display: block;
-        width: 100%;
-        position: static;
-        background: transparent;
-        box-shadow: none;
-        height: 3em;
-    }
-    
-    .navbar-main > ul {
-        padding-top: 0;
-        display: block;
-        position: static;
-        width: 100%;
-    }
-
-    .navbar-main > ul > h2 {
-        display: inline-block;
-    }
-    /*body > nav > h2,
-    body > nav > ul {
-        display: inline-block;
-        line-height: 20px;
-        padding-left: 1.6%;
-    }
-    */
-
-    .navbar-main > ul > li {
-        display: inline-block;
-    }
-   
-    .navbar-main > ul > li > a {
-        border: none;
-    }
-
-    .navbar-main > ul > li > a.active {
-        border-bottom: 2px solid gray;
-    }
-    
-    .main-content {
-        margin-top: 20px;
-        padding-left: 1.6%;
-    }
-    
-    .tg-menu-button {
-        display: none;
-    }
-}
-
-@media screen and (min-width: 960px) {
-    
-}
+.main-content .page {
+    height: 100vh;
+}*/

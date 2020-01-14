@@ -42,7 +42,14 @@ var Router = (function () {
         [].slice.call( document.querySelectorAll( 'section.page' ) )
             .map( disableElement );
 
-        enableElement( document.querySelector( '#' + content ) );
+        page = document.querySelector( '#' + content );
+
+        if( ! page ) {
+            enableElement( document.querySelector( '#error' ) );
+            return false;
+        }
+
+        enableElement( page );
     };
 
     var onHashChange = function (ev) {

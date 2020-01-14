@@ -6,7 +6,7 @@ class ParseToHtml:
     __links         = re.compile(r'');
     __lists         = re.compile(r'');
     __images        = re.compile(r'');
-    __paragraphs    = re.compile(r'()');
+    __paragraphs    = re.compile(r'(.+?)+');
 
     def __init__( self ):
         #print( self.__titles );
@@ -17,7 +17,7 @@ class ParseToHtml:
         self.__parseTitles();
         #self.__parseList();
         #self.__parseLinks();
-        #self.__parseParagraphs();
+        self.__parseParagraphs();
         #print self.__output;
     #just for testing...
     def writeFile( self ):
@@ -40,7 +40,15 @@ class ParseToHtml:
         self.__output = re.sub(regex, replace, self.__output);
         
     def __parseParagraphs( self ):
-        pass 
+        result = re.findall( self.__paragraphs, self.__output );
+        print self.__output
+        print result
+        #[ self.__parseParagraph( replacer ) for replacer in result ];
+
+    def __parseParagraph( self, textReplace ):
+        print( textReplace );
+
+
 #--- test ---
 def main():
     entry = SourceEntry();
@@ -51,7 +59,8 @@ def main():
 This is my first entry, and it's only for triying my new site generator.
 The main idea is creating an html file from a markdown file.
 
-I hope you enjoy this entry .
+I hope you enjoy this entry.
+
 ##Subtitle
 
 ###SubSubTitle
