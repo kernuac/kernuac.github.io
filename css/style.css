@@ -4,7 +4,13 @@
     box-sizing: border-box;
     /*transition: all 0.5s ease;*/
 }
+a {
+    text-decoration: none;
+}
 
+ul {
+    list-style: none;
+}
 body, html {
     font-family: 'Fira Sans', sans-serif;
     color: lightgray;
@@ -16,6 +22,7 @@ body{
     flex-flow: column wrap;
     width: 100vw;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 body > * {
@@ -23,7 +30,11 @@ body > * {
 }
 .site-header {
     width: 100vw;
-    background: darkslateblue;
+    height: 90vh;
+    background-color: #264b59;
+    background-image: url(../assets/img/my_wallpaper_mobile.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
     flex-flow: column wrap;
     text-align: center;
     order: 2;
@@ -32,26 +43,54 @@ body > * {
 .navbar-main {
     order: 1;
     background: #333333;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
 }
 
 .navbar-main ul {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100vw;
-    list-style: none;
+    display: none;
 }
 
-.navbar-main ul li a {
+.navbar-main ul:active {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    list-style: none;
+}
+.navbar-main h2 {
+    width: 100%;
+    display: flex
+}
+.navbar-main ul li {
+
+}
+
+.navbar-main ul li a, 
+.navbar-main h2 a {
+    display: block;
     color: white;
     line-height: 20px;
     text-decoration: none;
     padding: 15px 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: normal;
+    width: 100%;
+}
+
+.navbar-main ul li a:hover,
+.navbar-main h2 a:hover {
+    color:#333333;
+    background: white;
 }
 main {
+    width: 100vw;
     order: 3;
 }
 
 footer {
+    width: 100vw;
     order: 4;
 }
 /*.site-header {
@@ -119,10 +158,30 @@ footer {
 
 /** **/
 @media only screen and ( min-width: 750px ) {
+    .navbar-main h2 {
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
 
+    .navbar-main ul {
+        display: flex;
+        flex-flow: row wrap;
+    }
 }
 
 
 @media only screen and ( min-width: 980px ) {
-
+    .site-header {
+        background-color: #264b59;
+        background-image: url(../assets/img/my_wallpaper.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        flex-flow: column wrap;
+        text-align: center;
+        order: 2;
+    }
 }
