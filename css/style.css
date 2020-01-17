@@ -8,13 +8,53 @@
 body, html {
     font-family: 'Fira Sans', sans-serif;
     color: lightgray;
+    font-size: 12px;
 }
 
 body{
-
+    display: flex;
+    flex-flow: column wrap;
+    width: 100vw;
+    min-height: 100vh;
 }
 
+body > * {
+    display: flex;
+}
 .site-header {
+    width: 100vw;
+    background: darkslateblue;
+    flex-flow: column wrap;
+    text-align: center;
+    order: 2;
+}
+
+.navbar-main {
+    order: 1;
+    background: #333333;
+}
+
+.navbar-main ul {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100vw;
+    list-style: none;
+}
+
+.navbar-main ul li a {
+    color: white;
+    line-height: 20px;
+    text-decoration: none;
+    padding: 15px 20px;
+}
+main {
+    order: 3;
+}
+
+footer {
+    order: 4;
+}
+/*.site-header {
     width: 100vw;
     height: 100vh;
     background: #3b464d;
@@ -76,3 +116,13 @@ body{
 .main-content .page {
     height: 100vh;
 }*/
+
+/** **/
+@media only screen and ( min-width: 750px ) {
+
+}
+
+
+@media only screen and ( min-width: 980px ) {
+
+}
