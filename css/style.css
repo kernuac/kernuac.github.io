@@ -4,6 +4,10 @@
     box-sizing: border-box;
     /*transition: all 0.5s ease;*/
 }
+img {
+    position: relative;
+    z-index:-1;
+}
 a {
     text-decoration: none;
 }
@@ -28,7 +32,9 @@ body{
 body > * {
     display: flex;
 }
+
 .site-header {
+    padding-top: 15px;
     width: 100vw;
     height: 90vh;
     background-color: #264b59;
@@ -37,9 +43,45 @@ body > * {
     background-repeat: no-repeat;
     flex-flow: column wrap;
     text-align: center;
+    align-items: center;
+    justify-content: center;
     order: 2;
 }
 
+.site-header .img-profile {
+    order : 1;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    width: 75%;
+    clip-path: circle(40%);
+}
+
+.site-header .site-title {
+    order: 2;
+}
+
+.site-header .site-subtitle {
+    order: 3;
+}
+
+.img-profile .small {
+    display: flex !important;
+    width: 100%;
+}
+
+.img-profile .medium {
+    display: none !important;
+}
+
+.img-profile .large {
+    display: none !important;
+}
+.navbar-main {
+    position: fixed;
+    z-index: 99;
+
+}
 .navbar-main {
     order: 1;
     background: #333333;
@@ -52,7 +94,7 @@ body > * {
     display: none;
 }
 
-.navbar-main ul:active {
+.navbar-main ul.active {
     display: flex;
     flex-flow: column wrap;
     width: 100%;
@@ -79,6 +121,8 @@ body > * {
     width: 100%;
 }
 
+
+
 .navbar-main ul li a:hover,
 .navbar-main h2 a:hover {
     color:#333333;
@@ -86,6 +130,7 @@ body > * {
 }
 main {
     width: 100vw;
+    flex-direction: column;
     order: 3;
 }
 
@@ -93,6 +138,8 @@ footer {
     width: 100vw;
     order: 4;
 }
+
+
 /*.site-header {
     width: 100vw;
     height: 100vh;
@@ -158,6 +205,23 @@ footer {
 
 /** **/
 @media only screen and ( min-width: 750px ) {
+    img.small {
+        display: none !important;
+    }
+
+    img.medium {
+        display: flex !important;
+    }
+
+    img.large {
+        display: none !important;
+    }
+
+    .navbar-main {
+        position: fixed;
+        z-index: 99;
+    }
+
     .navbar-main h2 {
         width: 0;
         height: 0;
@@ -171,6 +235,11 @@ footer {
         display: flex;
         flex-flow: row wrap;
     }
+
+    .site-header {
+        align-items: center;
+        justify-content: center;
+    }
 }
 
 
@@ -183,5 +252,23 @@ footer {
         flex-flow: column wrap;
         text-align: center;
         order: 2;
+    }
+
+    .site-header .img-profile {
+        max-width: 240px;
+        align-self: center;
+        justify-self: center;
+    }
+
+    img.small {
+        display: none !important;
+    }
+
+    img.medium {
+        display: none !important;
+    }
+
+    img.large {
+        display: flex !important;
     }
 }

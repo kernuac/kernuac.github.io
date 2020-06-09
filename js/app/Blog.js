@@ -16,4 +16,4 @@ var Blog = (function () {
     return api;   
 })();
 
-
+export { Blog } 

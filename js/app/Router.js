@@ -42,7 +42,7 @@ var Router = (function () {
         [].slice.call( document.querySelectorAll( 'section.page' ) )
             .map( disableElement );
 
-        page = document.querySelector( '#' + content );
+        var page = document.querySelector( '#' + content );
 
         if( ! page ) {
             enableElement( document.querySelector( '#error' ) );
@@ -69,3 +69,7 @@ var Router = (function () {
     
     return api;
 })();
+
+export {
+    Router
+}

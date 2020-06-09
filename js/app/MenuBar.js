@@ -25,15 +25,22 @@ var MenuBar = ( function ()
     
     var onClickEvent = function ( ev ) {
         var element = ev.target;
-        var menuList = document.querySelector( '.navbar-main > ul' );
-
-        if( element.classList.contains( 'tg-menu-button' ) ) {
-            menuList.classList.add( 'active' );
-        } else {
-            menuList.classList.remove( 'active' );
-        }
+        
+        if( element.classList.contains( 'toggle-button' ) ) {
+            var subMenu = document.querySelector( '#'+element.dataset.toggle )
+            toggle( subMenu );
+        } 
     };
 
+    var toggle = function ( element ) {
+        if( element.classList.contains('active') ) {
+            element.classList.remove('active');
+        } else {
+            element.classList.add('active');
+        }
+    }
     return api;
 
 })();
+
+export  { MenuBar }

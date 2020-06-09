@@ -1,3 +1,7 @@
+import { Router } from './app/Router.js';
+import { MenuBar } from './app/MenuBar.js';
+import { Blog } from './app/Blog.js';
+
 var App = (function (Router, MenuBar, Blog) {
     var api = {};
 
